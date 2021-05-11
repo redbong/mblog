@@ -1,1 +1,1 @@
-# 나의 블로그 https://redbong.github.io/mblog/ 
+# 나의 블로그 http://b.redbong.site
