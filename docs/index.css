@@ -152,3 +152,11 @@
   .top-bar__menu-box-1 > ul > li:hover > ul {
     display:block;
   }
+  .work-list-box>ul>li{
+    width:calc(100% / 3);
+  }
+  .work-list-box>ul>li>img{
+    width:100%;
+    height:300px;
+    display:block;
+  }
