@@ -82,26 +82,31 @@ a {
   margin-right: auto;
 }
 
+.img-box > img {
+  width: 100%;
+  display: block;
+}
 
 /* 커스텀 */
 .con {
-  width: 1000px;
+  width: 1200px;
 }
 
+/* 탑바 시작 */
 .top-bar {
   background-color: #68C687;
   color: #1E1900;
 }
 
-.top-bar>.con>div:first-child {
-  width:240px;
+.top-bar > .con > div:first-child {
+  width: 240px;
 }
 
-.top-bar>.con>div:nth-child(2) {
-  width:calc(100% - 240px - 650px);
+.top-bar > .con > div:nth-child(2) {
+  width: calc(100% - 240px - 650px);
 }
 
-.top-bar>.con>div:last-child {
+.top-bar > .con > div:last-child {
   width: 650px;
 }
 
@@ -111,53 +116,130 @@ a {
   padding: 20px;
 }
 
-.top-bar__menu-box-1>ul>li {
+.top-bar__menu-box-1 > ul > li {
   font-size: 1.05rem;
   position: relative;
 }
 
 /* 모든 메뉴 아이템 텍스트 */
-.top-bar__menu-box-1 ul>li>a {
+.top-bar__menu-box-1 ul > li > a {
   display: block;
   white-space: nowrap;
 }
 
 /* 1차 메뉴 아이템 텍스트 */
-.top-bar__menu-box-1>ul>li>a {
+.top-bar__menu-box-1 > ul > li > a {
   padding: 22.5px 30px;
 }
 
 /* 서브 메뉴 아이템 텍스트 */
-.top-bar__menu-box-1>ul ul>li>a {
+.top-bar__menu-box-1 > ul ul > li > a {
   padding: 22.5px 0;
   text-align: center;
 }
 
-.top-bar__menu-box-1 ul>li:hover>a {
+.top-bar__menu-box-1 ul > li:hover > a {
   background-color: white;
-  color: #black;
+  color: #232323;
 }
 
-.top-bar__menu-box-1>ul>li>ul {
+.top-bar__menu-box-1 > ul > li > ul {
   display: none;
   position: absolute;
-  background-color: #68C687;
+  background-color: #232323;
   top: 100%;
   left: 0;
   width: 100%;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
-.top-bar__menu-box-1>ul>li:hover>ul {
+.top-bar__menu-box-1 > ul > li:hover > ul {
   display: block;
 }
+/* 탑바 끝 */
 
-.work-list-box>ul>li {
-  width: calc(100% / 3);
+/* section-0 */
+.section-0 {
+  margin-top:20px;
 }
 
-.work-list-box>ul>li>img {
-  width: 100%;
-  height: 400px;
-  display: block;
+/* work-list-box 시작 */
+.work-list-box {
 }
+
+.work-list-box > ul {
+  margin-left:-10px;
+  margin-right:-10px;
+}
+
+.work-list-box > ul > li {
+  margin-top:20px;
+  width:calc(100% / 3);
+  padding:0 10px;
+  cursor:pointer;
+}
+
+.work-list-box > ul > li > div {
+}
+
+.work-list-box > ul > li > div > .work-name {
+  margin-top:5px;
+  font-weight:bold;
+  text-align:center;
+}
+
+.work-list-box > ul > li > div > .work-date-period {
+  margin-top:5px;  
+  text-align:center;
+  color:#565656;
+}
+
+.work-list-box > ul > li > div > .img-box {
+  position:relative;
+  overflow:hidden;
+}
+
+.work-list-box > ul > li > div > .img-box > .addi {
+  border:3px solid white;
+  color:white;
+  padding:10px;
+  border-radius:10px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translateX(-50%) translateY(-50%);
+  font-weight:bold;
+  opacity:0;
+  transition: opacity 1s;
+}
+
+.work-list-box > ul > li:hover > div > .img-box > .addi {
+  opacity:1;
+}
+
+.work-list-box > ul > li > div > .img-box > .bg {
+  background-color:rgba(0,0,0,0);
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  transition:background-color 1s;
+}
+
+.work-list-box > ul > li:hover > div > .img-box > .bg {
+  background-color:rgba(0,0,0,0.7);
+}
+
+.work-list-box > ul > li > div > .img-box > img {
+  transition: transform 1s; /* 이미지에 transform 이 들어가면 유령보다 z축에서 더 위에 위치하는 경우가 있다. */
+  z-index:-1; /* 이렇게 하면 확실히 z축에서 바닥에 깔린다. */
+  position:relative; /* position:static 이면, z-index; 가 안 먹는다. */
+}
+
+.work-list-box > ul > li:hover > div > .img-box > img {
+  transform:scale(1.4);
+}
+
+/* work-list-box 끝 */
+
